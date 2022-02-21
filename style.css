@@ -4,12 +4,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: clip;
 }
 
 body {
     background-color: #24252a;
-    overflow-y: overlay;
+    overflow-y: scroll;
 }
 
 .title {
@@ -25,7 +24,6 @@ li, a, button {
     font-weight: 500;
     font-size: 20px;
     text-decoration: none;
-    overflow: hidden;
 }
 
 a, button {
@@ -42,6 +40,10 @@ header {
 
 .sticky .title, .sticky a, .sticky button {
     color: black;
+}
+
+.sticky .hamburgare div {
+    background-color: black;
 }
 
 .sticky {
@@ -106,15 +108,15 @@ button:hover {
 }
 
 .hamburgare {
-    overflow: hidden;
     display: none;
     cursor: pointer;
+    z-index: 999;
 }
 
 .hamburgare div {
     width: 25px;
     height: 3px;
-    background-color: rgb(226, 226, 226);
+    background-color: white;
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -135,11 +137,11 @@ section {
 
 @media screen and (max-width: 1000px) {
     .nav-links {
-        position: absolute;
+        position: fixed;
         right: 0px;
         top: 0;
         height: 100vh;
-        background-color: rgb(233, 135, 7);
+        background-color: black;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -149,8 +151,13 @@ section {
         padding: 20%;
     }
 
+    .sticky .nav-links {
+        background-color: white;
+    }
+
     .nav-links li {
         opacity: 0;
+        padding: 5%;
     }
 
     .nav-links a {
@@ -188,4 +195,8 @@ section {
 
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.lock-scroll {
+    overflow: clip;
 }

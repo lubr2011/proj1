@@ -25,4 +25,8 @@ const navSlide = () => {
 
 }
 
+function lockScroll() {
+    document.body.classList.toggle('lock-scroll');
+}
+
 navSlide(); //callar funktionen
