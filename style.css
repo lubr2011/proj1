@@ -4,11 +4,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth !important;
 }
 
 body {
     background-color: #24252a;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .title {
@@ -127,6 +129,21 @@ button:hover {
 
 section {
     height: 100vh;
+}
+
+#About {
+    transition: ease 0.6s;
+    background-color: blue;
+}
+
+#Universe {
+    transition: ease 0.6s;
+    background-color: red;
+}
+
+#Characters {
+    transition: ease 0.6s;
+    background-color: green;
 }
 
 @media screen and (max-width: 1500px) {

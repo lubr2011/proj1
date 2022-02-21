@@ -16,17 +16,29 @@ const navSlide = () => {
             } else { //ifall animationen inte körts
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`; //ease animation med bestämd tid för varje element
             }
+            navLinks[index].addEventListener('click', ()=> {
+                nav.classList.toggle('nav-active');
+                hamburgare.classList.toggle('toggle');
+                lockScroll();
+            });
         });
         //animerar in länkarna
         
         hamburgare.classList.toggle('toggle'); //animerar hamburgarikon
     });
     //togglar navigationsmenyn
-
 }
 
 function lockScroll() {
     document.body.classList.toggle('lock-scroll');
+
 }
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
 
 navSlide(); //callar funktionen
