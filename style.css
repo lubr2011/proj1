@@ -90,6 +90,10 @@ header {
     transition: transform 0.3s ease; /* liten ease animation så du ser den ritas ut*/
 }
 
+.sticky .nav-links a::before{
+    background-color: black;
+}
+
 .nav-links a:hover::before {
     transform: scaleX(1);
 }
