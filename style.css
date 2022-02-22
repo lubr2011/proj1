@@ -21,14 +21,14 @@ body {
     text-decoration: none;
 }
 
-li, a, button {
+li, li a, button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 20px;
     text-decoration: none;
 }
 
-a, button {
+li a, button {
     color: #ecf0f1;
 }
 
@@ -151,7 +151,7 @@ section {
         font-size: 30px;
     }
 
-    li, a, button {
+    li, li a, button {
         font-size: 15px;
     }
 }
@@ -336,6 +336,16 @@ h3 {
 p span {
     text-decoration: underline;
 }
+
+.wiki-link {
+    color: black;
+}
+
+.wiki-link:hover {
+    text-decoration-thickness: 2px;
+    font-weight: bold;
+}
+
 
 @media screen and (max-width: 1000px) {
     .about-container {
