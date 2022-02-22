@@ -221,3 +221,72 @@ section {
 .lock-scroll {
     overflow: clip;
 }
+
+.container {
+    padding-bottom: 10%;
+}
+
+h2 {
+    font-size: 5rem; /* ändrar storlek på texten till nedräkningen */
+    font-weight: bold; /* ändrar tjockleken på texten till nedräkningen */
+    padding: 3rem; /* ger en padding mellan texten och tiderna under */
+    text-align: center; /* centrerar texten (synns bara på mindre sidor) */
+}
+
+.next-volume {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #ecf0f1;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+h3 {
+    text-shadow: 2px 2px black;
+}
+
+.day, .hour, .minute, .second {
+    font-size: 3rem;
+}
+
+@media screen and (max-width:1150px) {
+    h2 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width:900px) {
+    h2 {
+        font-size: 3rem;
+    }
+
+    .container {
+        padding-bottom: 30%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .day, .hour, .minute, .second {
+        font-size: 2rem;
+    }
+    .container {
+        padding-bottom: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding-bottom: 60%;
+    }
+}
