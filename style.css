@@ -38,6 +38,7 @@ header {
     align-items: center;
     padding: 50px 10%;
     transition: 0.6s;
+    z-index: 10;
 }
 
 .sticky .title, .sticky a, .sticky button {
@@ -131,17 +132,16 @@ section {
     height: 100vh;
 }
 
-#About {
+/*#About {
     transition: ease 0.6s;
-    background-color: blue;
-}
+}*/
 
 #Universe {
     transition: ease 0.6s;
     background-color: red;
 }
 
-#Characters {
+#About {
     transition: ease 0.6s;
     background-color: green;
 }
@@ -226,7 +226,7 @@ section {
     padding-bottom: 10%;
 }
 
-h2 {
+.countdown-title {
     font-size: 5rem; /* ändrar storlek på texten till nedräkningen */
     font-weight: bold; /* ändrar tjockleken på texten till nedräkningen */
     padding: 3rem; /* ger en padding mellan texten och tiderna under */
@@ -258,13 +258,13 @@ h3 {
 }
 
 @media screen and (max-width:1150px) {
-    h2 {
+    .countdown-title {
         font-size: 4rem;
     }
 }
 
 @media screen and (max-width:900px) {
-    h2 {
+    .countdown-title {
         font-size: 3rem;
     }
 
@@ -274,7 +274,7 @@ h3 {
 }
 
 @media screen and (max-width:700px) {
-    h2 {
+    .countdown-title {
         font-size: 2rem;
     }
     .day, .hour, .minute, .second {
@@ -288,5 +288,74 @@ h3 {
 @media screen and (max-width: 500px) {
     .container {
         padding-bottom: 60%;
+    }
+}
+
+#Characters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #24252a;
+}
+
+.about-container {
+    position: relative;
+    height: 100%;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-container .card {
+    position: relative;
+    max-width: 450px;
+    background: #ecf0f1;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.about-container .card .imgBox {
+    max-width: 150px;
+    flex: 0 0 150px;
+}
+
+.about-container .card .imgBox img {
+    max-width: 100%;
+}
+
+.about-container .card .content {
+    margin-left: 20px;
+}
+
+p span {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-container .card {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-container .card {
+        max-width: 350px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 730px) {
+    #Characters {
+        height: 130vh;
     }
 }

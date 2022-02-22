@@ -3,6 +3,7 @@ const navSlide = () => {
     const hamburgare = document.querySelector('.hamburgare'); //hamburgar variabel
     const nav = document.querySelector('.nav-links'); //nav variabel
     const navLinks = document.querySelectorAll('.nav-links li'); //navlänk variabel
+    var isOpen = false;
     //variabler
 
     //togglar navigationsmenyn
@@ -18,21 +19,24 @@ const navSlide = () => {
             }
         });
         //animerar in länkarna
-        
+        isOpen = true;
         hamburgare.classList.toggle('toggle'); //animerar hamburgarikon
     });
 
     var btn = document.querySelectorAll('.nav-links li a');
     for (var i = 0; i < btn.length; i++) {
         btn[i].addEventListener('click', function() {
+            if (isOpen){
             lockScroll();
             nav.classList.toggle('nav-active');
             navLinks.forEach((link, index) => {
                 link.style.animation = '';
             });
             hamburgare.classList.toggle('toggle');
+        }
         });
     };
+    isOpen = false;
 }
 
 function lockScroll() {
