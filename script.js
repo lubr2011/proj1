@@ -24,19 +24,19 @@ const navSlide = () => {
     });
 
     var btn = document.querySelectorAll('.nav-links li a');
-    for (var i = 0; i < btn.length; i++) {
-        btn[i].addEventListener('click', function() {
-            if (isOpen){
-            lockScroll();
-            nav.classList.toggle('nav-active');
-            navLinks.forEach((link, index) => {
-                link.style.animation = '';
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].addEventListener('click', function() {
+                if (isOpen){
+                isOpen = false;
+                lockScroll();
+                nav.classList.toggle('nav-active');
+                navLinks.forEach((link, index) => {
+                    link.style.animation = '';
+                });
+                hamburgare.classList.toggle('toggle');
+            }
             });
-            hamburgare.classList.toggle('toggle');
-        }
-        });
-    };
-    isOpen = false;
+        };
 }
 
 function lockScroll() {
@@ -49,6 +49,8 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-
+function flip() {
+    document.body.classList.toggle('flip');
+}
 
 navSlide(); //callar funktionen

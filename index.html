@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,9 +13,9 @@
         <h1 class="title" onclick="topFunction()">Glas</h1>
         <nav>
             <ul class="nav-links">
-                <li><a href="#About" id="btn">About</a></li>
-                <li><a href="#Universe" id="btn">Universe</a></li>
-                <li><a href="#Characters" id="btn">Characters</a></li>
+                <li class="navList"><a href="#About">About</a></li>
+                <li class="navList"><a href="#Universe">Universe</a></li>
+                <li class="navList"><a href="#Characters">Characters</a></li>
             </ul>
         </nav>
         <a class="cta" href="comic/index.html"><button>Read Now!</button></a>
@@ -97,6 +98,55 @@
         </div>
     </section>
     
+    <footer>
+        <div class="footerInfo">
+            <div class="footerWidth about">
+                <h2>About</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt, assumenda veniam qui culpa ipsam dolorum quas suscipit debitis repudiandae. Praesentium laboriosam, incidunt ad earum esse voluptates dolorum numquam exercitationem.
+                </p>
+                <div class="socialMedia">
+                    <ul class="footerul">
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-github"></i></a></li>
+                        <li><a href="#" onclick="flip()"><i class="fas fa-user-secret"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerWidth link">
+                <h2>Navigation</h2>
+                <ul class="footerul">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Universe</a></li>
+                    <li><a href="#">Characters</a></li>
+                    <li><a href="#">Comic</a></li>
+                </ul>
+            </div>
+            <div class="footerWidth contact">
+                <h2>Contact</h2>
+                <ul class="footerul">
+                    <li>
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <p>
+                            hehe there ain't no location to find here
+                        </p>
+                    </li>
+                    <li>
+                        <span><i class="far fa-envelope"></i></span>
+                        <a href="#">definitelyarealmail@glas.com</a>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-phone-volume"></i></span>
+                        <a href="#">555 5555 555</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© COPYRIGHT 2022, well not really.</p>
+        </div>
+    </footer>
 
     <script src="scroll.js"></script>
     <script src="countdown.js"></script>
