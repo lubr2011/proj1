@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+}
+
+body {
+    background-color: #24252a;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.navList, .navList a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navList a, button {
+    color: #ecf0f1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10%;
+    transition: 0.6s;
+    z-index: 10;
+}
+
+.sticky .title, .sticky a, .sticky button {
+    color: black;
+}
+
+.sticky .hamburgare div {
+    background-color: black;
+}
+
+.sticky {
+    transition: 0.6s;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    padding: 20px 10%;
+    background-color: white;
+}
+
+.title {
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links .navList {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links .navList a {
+    transition: all 0.3s ease 0s;
+    position: relative;
+}
+
+.nav-links .navList a:hover {
+    color: #0088a9;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(226, 226, 226); /* ger elementet en färg */
+    transform: scaleX(0); /* sätter underline början till mitten */
+    transition: transform 0.3s ease; /* liten ease animation så du ser den ritas ut*/
+}
+
+.sticky .nav-links a::before{
+    background-color: black;
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.hamburgare {
+    display: none;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.hamburgare div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+section {
+    height: 100vh;
+}
+
+/*#About {
+    transition: ease 0.6s;
+}*/
+
+#Universe {
+    transition: ease 0.6s;
+    background-color: red;
+}
+
+#About {
+    transition: ease 0.6s;
+    background-color: green;
+}
+
+@media screen and (max-width: 1500px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .navList, .navList a, button {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        top: 0;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding: 20%;
+    }
+
+    .sticky .nav-links {
+        background-color: white;
+    }
+
+    .nav-links .navList {
+        opacity: 0;
+        padding: 5%;
+    }
+
+    .nav-links a {
+        font-size: 40px;
+        padding: 5%;
+    }
+
+    .hamburgare {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.lock-scroll {
+    overflow: clip;
+}
+
+.container {
+    padding-bottom: 10%;
+}
+
+.countdown-title {
+    font-size: 5rem; /* ändrar storlek på texten till nedräkningen */
+    font-weight: bold; /* ändrar tjockleken på texten till nedräkningen */
+    padding: 3rem; /* ger en padding mellan texten och tiderna under */
+    text-align: center; /* centrerar texten (synns bara på mindre sidor) */
+}
+
+.next-volume {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #ecf0f1;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+h3 {
+    text-shadow: 2px 2px black;
+}
+
+.day, .hour, .minute, .second {
+    font-size: 3rem;
+}
+
+@media screen and (max-width:1150px) {
+    .countdown-title {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .countdown-title {
+        font-size: 3rem;
+    }
+
+    .container {
+        padding-bottom: 30%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .countdown-title {
+        font-size: 2rem;
+    }
+    .day, .hour, .minute, .second {
+        font-size: 2rem;
+    }
+    .container {
+        padding-bottom: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding-bottom: 60%;
+    }
+}
+
+#Characters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #24252a;
+}
+
+.about-container {
+    position: relative;
+    height: 100%;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-container .card {
+    position: relative;
+    max-width: 450px;
+    background: #ecf0f1;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.about-container .card .imgBox {
+    max-width: 150px;
+    flex: 0 0 150px;
+}
+
+.about-container .card .imgBox img {
+    max-width: 100%;
+}
+
+.about-container .card .content {
+    margin-left: 20px;
+}
+
+p span {
+    text-decoration: underline;
+}
+
+.wiki-link {
+    color: black;
+}
+
+.wiki-link:hover {
+    text-decoration-thickness: 2px;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-container .card {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-container .card {
+        max-width: 350px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 730px) {
+    #Characters {
+        height: 130vh;
+    }
+}
+
+footer {
+    background-color: rgb(34, 34, 34);
+    color: #fff;
+}
+
+footer {
+    font-family: "Montserrat", sans-serif;
+}
+
+.footerul, .footerul li {
+    list-style-type: none;
+}
+
+.footerul li a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    color: #fff;
+}
+
+.footerInfo {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    padding: 50px 0;
+}
+
+.footerInfo .footerWidth {
+    padding: 0 15px;
+}
+
+.footerInfo h2 {
+    margin-bottom: 20px;
+}
+
+.about, .contact {
+    width: 40%;
+}
+
+.link {
+    width: 20%
+}
+
+.socialMedia {
+    margin-top: 30px;
+}
+
+.socialMedia ul {
+    display: flex;
+}
+
+.socialMedia ul li a {
+    display: inline-block;
+    margin-right: 50px;
+    width: 50px;
+    height: 50px;
+    padding-top: 12px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    text-align: center;
+}
+
+.socialMedia ul li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.link ul li {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.link ul li a:hover {
+    color: #0088a9
+}
+
+.link ul li a::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(226, 226, 226); /* ger elementet en färg */
+    transform: scaleX(0); /* sätter underline början till mitten */
+    transition: transform 0.3s ease; /* liten ease animation så du ser den ritas ut*/
+}
+
+.link ul li a:hover::before {
+    transform: scaleX(1);
+}
+
+.contact ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact ul li span {
+    margin-right: 15px;
+}
+
+.copyright {
+    padding: 15px 0;
+    text-align: center;
+    background-color: rgb(66, 66, 66);
+}
+
+@media screen and (max-width: 1000px) {
+    .about, .contact {
+        width: 35%;
+    }
+
+    .link {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 737px) {
+    .about, .contact, .link {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footerInfo {
+        flex-direction: column;
+    }
+}
+
+.flip {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
