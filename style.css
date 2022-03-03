@@ -13,6 +13,68 @@ body {
     scroll-behavior: smooth;
 }
 
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 5;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    z-index: 4;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 .title {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -21,14 +83,14 @@ body {
     text-decoration: none;
 }
 
-.navList, .navList a, button {
+.navList, .navList a, .cta button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 20px;
     text-decoration: none;
 }
 
-.navList a, button {
+.navList a, .cta button {
     color: #ecf0f1;
 }
 
@@ -38,7 +100,7 @@ header {
     align-items: center;
     padding: 50px 10%;
     transition: 0.6s;
-    z-index: 10;
+    z-index: 2;
 }
 
 .sticky .title, .sticky a, .sticky button {
@@ -101,7 +163,7 @@ header {
     transform: scaleX(1);
 }
 
-button {
+.cta button {
     padding: 9px 25px;
     background-color: rgba(0, 136, 169, 1);
     border: none;
@@ -110,14 +172,14 @@ button {
     transition: all 0.3s ease 0s;
 }
 
-button:hover {
+.cta button:hover {
     background-color: rgba(0, 136, 169, 0.8);
 }
 
 .hamburgare {
     display: none;
     cursor: pointer;
-    z-index: 999;
+    z-index: 3;
 }
 
 .hamburgare div {
@@ -131,10 +193,6 @@ button:hover {
 section {
     height: 100vh;
 }
-
-/*#About {
-    transition: ease 0.6s;
-}*/
 
 #Universe {
     transition: ease 0.6s;
@@ -151,7 +209,7 @@ section {
         font-size: 30px;
     }
 
-    .navList, .navList a, button {
+    .navList, .navList a, .cta button {
         font-size: 15px;
     }
 }

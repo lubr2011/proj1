@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="openModal(modal), lockScroll()">
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modal-title">Information</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Denna hemsida är ej klar för inlämning och ska ej bedömas vid denna tidpunkt.
+        </div>
+    </div>
+    <div id="overlay"></div>
     <header>
         <h1 class="title" onclick="topFunction()">Glas</h1>
         <nav>
