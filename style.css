@@ -194,12 +194,12 @@ section {
     height: 100vh;
 }
 
-#Universe {
+#section1 {
     transition: ease 0.6s;
     background-color: red;
 }
 
-#About {
+#section0 {
     transition: ease 0.6s;
     background-color: green;
 }
@@ -211,6 +211,10 @@ section {
 
     .navList, .navList a, .cta button {
         font-size: 15px;
+    }
+
+    #hej {
+        bottom: 76px;
     }
 }
 
@@ -349,7 +353,7 @@ h3 {
     }
 }
 
-#Characters {
+#section2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -422,8 +426,8 @@ p span {
     }
 }
 
-@media screen and (max-height: 730px) {
-    #Characters {
+@media screen and (max-height: 930px) {
+    #section2 {
         height: 130vh;
     }
 }
@@ -563,3 +567,18 @@ footer {
     -webkit-transform: rotate(180deg);
     -o-transform: rotate(180deg);
 }
+
+/* #About {
+    padding-top: 90px;
+} */
+
+
+.next-volume {
+    position: relative;
+}
+
+#hej {
+    position: absolute;
+    bottom: 88px;
+}
+

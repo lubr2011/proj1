@@ -19,11 +19,13 @@
         </div>
     </div>
     <div id="overlay"></div>
-    <header>
+    <header id="top">
         <h1 class="title" onclick="topFunction()">Glas</h1>
         <nav>
             <ul class="nav-links">
-                <li class="navList"><a href="#About">About</a></li>
+                <li class="navList">
+                    <a onclick="scrollToId()">About</a>
+                </li>
                 <li class="navList"><a href="#Universe">Universe</a></li>
                 <li class="navList"><a href="#Characters">Characters</a></li>
             </ul>
@@ -36,7 +38,7 @@
         </div>
     </header>
 
-    <section class="next-volume">
+    <section class="next-volume" id="black">
         <div class="container">
             <h2 class="countdown-title">Next season release date:</h2>
             <div class="countdown">
@@ -58,13 +60,17 @@
                 </div>
             </div>
         </div>
+        <div id="hej"></div>
     </section>
 
-    <section id="About">
+    <section id="section0">
+        hej
 
     </section>
-    <section id="Universe"></section>
-    <section id="Characters">
+    <section id="section1">
+        <div id="hej"></div>
+    </section>
+    <section id="section2">
         <div class="about-container">
             <div class="card">
                 <div class="imgBox">
@@ -106,6 +112,7 @@
                 </div>
             </div>
         </div>
+        <div id="hej"></div>
     </section>
     
     <footer>
@@ -157,6 +164,22 @@
             <p>© COPYRIGHT 2022, well not really.</p>
         </div>
     </footer>
+    <script>
+        function scrollToId() {
+            var elmnt = document.querySelector('header');
+            var elmntHeight = elmnt.clientHeight;
+ 
+            var btns = document.querySelectorAll('.nav-links li a');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener('click', function() {
+                    var section = document.getElementById("section");
+                    console.log(i)
+                    var distanceToTop = section.getBoundingClientRect().top;
+                    window.scrollBy(0, distanceToTop - elmntHeight);
+                });
+            }
+        }
+    </script>
 
     <script src="scroll.js"></script>
     <script src="countdown.js"></script>

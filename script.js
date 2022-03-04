@@ -75,4 +75,6 @@ function flip() {
     document.body.classList.toggle('flip');
 }
 
+
+
 navSlide(); //callar funktionen
